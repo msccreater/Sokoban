@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="2026年5月4日"
+config/name="推箱子"
 config/tags=PackedStringArray("箱子")
 run/main_scene="uid://dkn6483nsv0xb"
 config/features=PackedStringArray("4.6", "Forward Plus")
