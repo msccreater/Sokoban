@@ -1,0 +1,133 @@
+[gd_scene format=3 uid="uid://bgmqknsa1ejo5"]
+
+[ext_resource type="Script" uid="uid://lp6wrcxd1a31" path="res://scripts/solution/solution.gd" id="1_84nbj"]
+
+[node name="Solution" type="Node2D" unique_id=1711303896 node_paths=PackedStringArray("level_label", "move_label", "push_label", "play_content", "tips_panel", "tips_label", "func_layout", "func_play_button")]
+script = ExtResource("1_84nbj")
+level_label = NodePath("UI/TopBar/HBoxContainer/LevelLabel")
+move_label = NodePath("UI/TopBar/HBoxContainer/MoveLabel")
+push_label = NodePath("UI/TopBar/HBoxContainer/PushLabel")
+play_content = NodePath("PlayContent")
+tips_panel = NodePath("UI/TipsPanel")
+tips_label = NodePath("UI/TipsPanel/TipsLabel")
+func_layout = NodePath("UI/SolutionControlBar/VBoxContainer")
+func_play_button = NodePath("UI/SolutionControlBar/VBoxContainer/AutoPlayButton")
+
+[node name="PlayContent" type="Node2D" parent="." unique_id=2057248844]
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=1497161835]
+
+[node name="TopBar" type="Panel" parent="UI" unique_id=1045955299]
+custom_minimum_size = Vector2(0, 30)
+anchors_preset = -1
+anchor_right = 1.0
+grow_horizontal = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/TopBar" unique_id=1084594752]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="LevelLabel" type="Label" parent="UI/TopBar/HBoxContainer" unique_id=1025596115]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+text = "关卡"
+
+[node name="MoveLabel" type="Label" parent="UI/TopBar/HBoxContainer" unique_id=1261277072]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+text = "步数"
+
+[node name="PushLabel" type="Label" parent="UI/TopBar/HBoxContainer" unique_id=1891958306]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+text = "移动"
+
+[node name="SolutionControlBar" type="Panel" parent="UI" unique_id=115378668]
+anchors_preset = -1
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -100.0
+offset_top = 100.0
+offset_right = -100.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/SolutionControlBar" unique_id=659504394]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="SetpBackButton" type="Button" parent="UI/SolutionControlBar/VBoxContainer" unique_id=1634313436]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+focus_mode = 0
+theme_override_constants/icon_max_width = 20
+theme_override_font_sizes/font_size = 20
+text = "回退一步"
+
+[node name="RewindPlayButton" type="Button" parent="UI/SolutionControlBar/VBoxContainer" unique_id=613892013]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+focus_mode = 0
+theme_override_font_sizes/font_size = 20
+text = "快速回退"
+
+[node name="AutoPlayButton" type="Button" parent="UI/SolutionControlBar/VBoxContainer" unique_id=116173842]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+focus_mode = 0
+theme_override_font_sizes/font_size = 20
+text = "自动播放"
+
+[node name="ForwardPlayButton" type="Button" parent="UI/SolutionControlBar/VBoxContainer" unique_id=1883360988]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+focus_mode = 0
+theme_override_font_sizes/font_size = 20
+text = "快速前进"
+
+[node name="StepForwardButton" type="Button" parent="UI/SolutionControlBar/VBoxContainer" unique_id=163153882]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+focus_mode = 0
+theme_override_font_sizes/font_size = 20
+text = "快进一步"
+
+[node name="BackGameButton" type="Button" parent="UI/SolutionControlBar/VBoxContainer" unique_id=84023917]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+focus_mode = 0
+theme_override_font_sizes/font_size = 20
+text = "返回游戏"
+
+[node name="TipsPanel" type="Panel" parent="UI" unique_id=1593401810]
+visible = false
+custom_minimum_size = Vector2(200, 50)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TipsLabel" type="Label" parent="UI/TipsPanel" unique_id=1407404502]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "提示信息"
+horizontal_alignment = 1
+vertical_alignment = 1

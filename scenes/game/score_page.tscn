@@ -1,0 +1,95 @@
+[gd_scene format=3 uid="uid://bvi1lpygnart2"]
+
+[ext_resource type="Script" path="res://scripts/game/score_page.gd" id="1_htace"]
+
+[node name="ScorePage" type="Panel" unique_id=897350690]
+custom_minimum_size = Vector2(100, 50)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_htace")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1033017194]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+color = Color(0, 0, 0, 0.5)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1913953322]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -200.0
+offset_right = 250.0
+offset_bottom = 200.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="TitleLabel" type="Label" parent="VBoxContainer" unique_id=1163747952]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.9063318, 0.48452926, 1)
+theme_override_font_sizes/font_size = 48
+text = "恭喜过关"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="InfoNode" type="VBoxContainer" parent="VBoxContainer" unique_id=1381147193]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="NowScoreLabel" type="Label" parent="VBoxContainer/InfoNode" unique_id=553657534]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+text = "本次解答   Move 0   Push 0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HistoryScoreLabel" type="Label" parent="VBoxContainer/InfoNode" unique_id=291953798]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9063318, 0.9063318, 0.9063318, 1)
+theme_override_font_sizes/font_size = 24
+text = "历史解答   Move 0   Push 0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BestScoreLabel" type="Label" parent="VBoxContainer/InfoNode" unique_id=312459666]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.95468724, 0.58383155, 1)
+theme_override_font_sizes/font_size = 24
+text = "最佳解答   Move 0   Push 0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ButtonContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=90183826]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="RestartButton" type="Button" parent="VBoxContainer/ButtonContainer" unique_id=1914550247]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(160, 60)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "重玩本关"
+
+[node name="ContinueButton" type="Button" parent="VBoxContainer/ButtonContainer" unique_id=612325344]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(160, 60)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "继续挑战"

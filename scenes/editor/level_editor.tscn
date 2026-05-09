@@ -1,0 +1,230 @@
+[gd_scene format=3 uid="uid://c7l34vydfjdqh"]
+
+[ext_resource type="Script" uid="uid://dr71rn4rowqbj" path="res://scripts/editor/level_editor.gd" id="1_gbj8i"]
+[ext_resource type="Texture2D" uid="uid://6r74u2tunqy8" path="res://assets/images/game-block-wall.png" id="2_kq7ik"]
+[ext_resource type="Texture2D" uid="uid://bgk6cmqvbmvsb" path="res://assets/images/game-block-floor.png" id="3_frw7m"]
+[ext_resource type="Texture2D" uid="uid://dbr05v3gi2gbk" path="res://assets/images/game-block-target.png" id="4_iqgpm"]
+[ext_resource type="Texture2D" uid="uid://be4nmp83ajhkt" path="res://assets/images/game-block-box.png" id="5_cw8ns"]
+[ext_resource type="Texture2D" uid="uid://bop4sveeay1jy" path="res://assets/images/game-block-box2.png" id="6_71kam"]
+[ext_resource type="Texture2D" uid="uid://bs4xs5a0mt5cv" path="res://assets/images/game-role-walk-1.png" id="7_forrt"]
+[ext_resource type="Texture2D" uid="uid://b3q3dtn5e1n7n" path="res://assets/images/game-role-target.png" id="8_0g8ek"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gbj8i"]
+bg_color = Color(0.29803923, 0.29803923, 0.29803923, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0ch18"]
+bg_color = Color(0.2901961, 0.2901961, 0.2901961, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tfg5o"]
+bg_color = Color(0.2901961, 0.5647059, 0.8509804, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hvfrq"]
+bg_color = Color(0.3529412, 0.3529412, 0.3529412, 1)
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_4fccr"]
+
+[node name="LevelEditor" type="Control" unique_id=1769015994]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_gbj8i")
+
+[node name="EditArea" type="Panel" parent="." unique_id=102200081]
+custom_minimum_size = Vector2(300, 300)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_gbj8i")
+
+[node name="TopBar" type="HBoxContainer" parent="." unique_id=771936800]
+layout_mode = 0
+offset_left = 21.0
+offset_top = 5.0
+offset_right = 313.0
+offset_bottom = 45.0
+
+[node name="BtnTestPlay" type="Button" parent="TopBar" unique_id=1524541076]
+layout_mode = 2
+focus_mode = 0
+text = "试玩"
+
+[node name="BtnTestSolution" type="Button" parent="TopBar" unique_id=1177926115]
+layout_mode = 2
+focus_mode = 0
+text = "试解"
+
+[node name="BtnImport" type="Button" parent="TopBar" unique_id=523610195]
+layout_mode = 2
+focus_mode = 0
+text = "从剪切板导入"
+
+[node name="BtnExport" type="Button" parent="TopBar" unique_id=771921768]
+layout_mode = 2
+focus_mode = 0
+text = "导出到剪切板"
+
+[node name="TileBar" type="HBoxContainer" parent="." unique_id=757762789]
+layout_mode = 0
+offset_left = 373.0
+offset_right = 777.0
+offset_bottom = 40.0
+
+[node name="BtnWall" type="Button" parent="TileBar" unique_id=1608411729]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+focus_mode = 0
+theme_override_constants/icon_max_width = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_0ch18")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_tfg5o")
+theme_override_styles/hover = SubResource("StyleBoxFlat_hvfrq")
+toggle_mode = true
+button_pressed = true
+button_group = SubResource("ButtonGroup_4fccr")
+icon = ExtResource("2_kq7ik")
+icon_alignment = 1
+
+[node name="BtnFloor" type="Button" parent="TileBar" unique_id=1422710373]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+focus_mode = 0
+theme_override_constants/icon_max_width = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_0ch18")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_tfg5o")
+theme_override_styles/hover = SubResource("StyleBoxFlat_hvfrq")
+toggle_mode = true
+button_group = SubResource("ButtonGroup_4fccr")
+icon = ExtResource("3_frw7m")
+icon_alignment = 1
+
+[node name="BtnTarget" type="Button" parent="TileBar" unique_id=934303300]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+focus_mode = 0
+theme_override_constants/icon_max_width = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_0ch18")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_tfg5o")
+theme_override_styles/hover = SubResource("StyleBoxFlat_hvfrq")
+toggle_mode = true
+button_group = SubResource("ButtonGroup_4fccr")
+icon = ExtResource("4_iqgpm")
+icon_alignment = 1
+
+[node name="BtnBox" type="Button" parent="TileBar" unique_id=1287332410]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+focus_mode = 0
+theme_override_constants/icon_max_width = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_0ch18")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_tfg5o")
+theme_override_styles/hover = SubResource("StyleBoxFlat_hvfrq")
+toggle_mode = true
+button_group = SubResource("ButtonGroup_4fccr")
+icon = ExtResource("5_cw8ns")
+icon_alignment = 1
+
+[node name="BtnBoxOnTarget" type="Button" parent="TileBar" unique_id=740698339]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+focus_mode = 0
+theme_override_constants/icon_max_width = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_0ch18")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_tfg5o")
+theme_override_styles/hover = SubResource("StyleBoxFlat_hvfrq")
+toggle_mode = true
+button_group = SubResource("ButtonGroup_4fccr")
+icon = ExtResource("6_71kam")
+icon_alignment = 1
+
+[node name="BtnPlayer" type="Button" parent="TileBar" unique_id=1600011184]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+focus_mode = 0
+theme_override_constants/icon_max_width = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_0ch18")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_tfg5o")
+theme_override_styles/hover = SubResource("StyleBoxFlat_hvfrq")
+toggle_mode = true
+button_group = SubResource("ButtonGroup_4fccr")
+icon = ExtResource("7_forrt")
+icon_alignment = 1
+
+[node name="BtnPlayerOnTarget" type="Button" parent="TileBar" unique_id=1128220076]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+focus_mode = 0
+theme_override_constants/icon_max_width = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_0ch18")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_tfg5o")
+theme_override_styles/hover = SubResource("StyleBoxFlat_hvfrq")
+toggle_mode = true
+button_group = SubResource("ButtonGroup_4fccr")
+icon = ExtResource("8_0g8ek")
+icon_alignment = 1
+
+[node name="LabelCurrentTile" type="Label" parent="TileBar" unique_id=2146631321]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 26
+text = "当前选中图块"
+
+[node name="InfoPanel" type="VBoxContainer" parent="." unique_id=152412206]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -122.0
+offset_top = 3.0
+offset_right = -50.0
+offset_bottom = 123.0
+grow_horizontal = 0
+
+[node name="LabelSizeInfo" type="Label" parent="InfoPanel" unique_id=1711578480]
+layout_mode = 2
+text = "当前尺寸"
+
+[node name="LabelCounts" type="Label" parent="InfoPanel" unique_id=1784176572]
+layout_mode = 2
+text = "当前数量"
+
+[node name="BtnResize" type="Button" parent="InfoPanel" unique_id=1899867887]
+layout_mode = 2
+focus_mode = 0
+text = "调整尺寸"
+
+[node name="BtnClear" type="Button" parent="InfoPanel" unique_id=1582966348]
+layout_mode = 2
+focus_mode = 0
+text = "全部清空"
+
+[node name="TipsPanel" type="Panel" parent="." unique_id=1770419986]
+visible = false
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TipsLabel" type="Label" parent="TipsPanel" unique_id=860282376]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "提示信息"
+horizontal_alignment = 1
+vertical_alignment = 1

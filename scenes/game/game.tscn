@@ -1,0 +1,116 @@
+[gd_scene format=3 uid="uid://dkn6483nsv0xb"]
+
+[ext_resource type="Script" uid="uid://bcoa67qnumd5u" path="res://scripts/game/game.gd" id="1_0sr1o"]
+[ext_resource type="PackedScene" path="res://scenes/game/score_page.tscn" id="2_kelw5"]
+[ext_resource type="PackedScene" path="res://scenes/game/level_select_page.tscn" id="3_lfrn8"]
+
+[node name="Game" type="Node2D" unique_id=1672069299]
+script = ExtResource("1_0sr1o")
+
+[node name="PlayContentNode" type="Node2D" parent="." unique_id=1867316370]
+unique_name_in_owner = true
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=592404083]
+
+[node name="TopBar" type="Panel" parent="UI" unique_id=1084594752]
+custom_minimum_size = Vector2(0, 30)
+anchors_preset = -1
+anchor_right = 1.0
+grow_horizontal = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/TopBar" unique_id=610325346]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="LevelLabel" type="Label" parent="UI/TopBar/HBoxContainer" unique_id=1025596115]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+text = "关卡"
+
+[node name="MoveLabel" type="Label" parent="UI/TopBar/HBoxContainer" unique_id=1261277072]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+text = "步数"
+
+[node name="PushLabel" type="Label" parent="UI/TopBar/HBoxContainer" unique_id=1891958306]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+text = "移动"
+
+[node name="RightBar" type="Panel" parent="UI" unique_id=115378668]
+anchors_preset = -1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_top = 100.0
+offset_right = -100.0
+grow_horizontal = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/RightBar" unique_id=659504394]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="RestartButton" type="Button" parent="UI/RightBar/VBoxContainer" unique_id=1634313436]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+focus_mode = 0
+theme_override_font_sizes/font_size = 20
+text = "重开"
+
+[node name="UndoButton" type="Button" parent="UI/RightBar/VBoxContainer" unique_id=613892013]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+focus_mode = 0
+theme_override_font_sizes/font_size = 20
+text = "回退"
+
+[node name="LevelButton" type="Button" parent="UI/RightBar/VBoxContainer" unique_id=116173842]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+focus_mode = 0
+theme_override_font_sizes/font_size = 20
+text = "选关"
+
+[node name="SolutionButton" type="Button" parent="UI/RightBar/VBoxContainer" unique_id=1883360988]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+focus_mode = 0
+theme_override_font_sizes/font_size = 20
+text = "解答"
+
+[node name="SFXButton" type="CheckButton" parent="UI/RightBar/VBoxContainer" unique_id=337836565]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+focus_mode = 0
+theme_override_font_sizes/font_size = 20
+theme_override_colors/button_checked_color = Color(0, 1, 0, 1)
+text = "音效"
+
+[node name="EditorButton" type="Button" parent="UI/RightBar/VBoxContainer" unique_id=319150104]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+focus_mode = 0
+theme_override_font_sizes/font_size = 20
+text = "自定义"
+
+[node name="ScorePage" parent="UI" unique_id=897350690 instance=ExtResource("2_kelw5")]
+unique_name_in_owner = true
+visible = false
+
+[node name="LevelSelectPage" parent="UI" unique_id=997194949 instance=ExtResource("3_lfrn8")]
+unique_name_in_owner = true
+visible = false
